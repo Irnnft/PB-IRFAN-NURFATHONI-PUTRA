@@ -10,36 +10,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Silahkan Login Terlebih Dahulu"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
+            android:layout_marginTop="32dp"
+            android:textSize="22sp"
             android:gravity="center"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="#333"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="32dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email Pengguna:"
-                android:textStyle="bold"/>
+                android:text="Email Pengguna"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textStyle="bold"
+                android:textColor="#444"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2dp"
-                app:hintAnimationEnabled="true"
-                app:hintEnabled="false">
+                app:boxStrokeWidth="1dp"
+                android:layout_marginTop="4dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
@@ -49,28 +54,29 @@
                     android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="16dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kata Sandi:"
-                android:textStyle="bold"/>
+                android:text="Kata Sandi"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textStyle="bold"
+                android:textColor="#444"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2dp"
-                app:hintAnimationEnabled="true"
-                app:hintEnabled="false">
+                app:boxStrokeWidth="1dp"
+                android:layout_marginTop="4dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
@@ -80,54 +86,55 @@
                     android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
         <CheckBox
             android:id="@+id/checkboxes"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="Ingat Saya"/>
+            android:layout_marginTop="16dp"
+            android:text="Ingat Saya"
+            android:textColor="#444"/>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"
             android:backgroundTint="#155EEF"
-            android:layout_margin="10dp"/>
+            android:padding="12dp"/>
 
         <TextView
             android:id="@+id/forgotPassword"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lupa Kata Sandi?"
             android:textColor="#155EEF"
+            android:layout_marginTop="12dp"
             android:gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="belum punya akun?"/>
+                android:text="Belum punya akun?"/>
 
             <TextView
                 android:id="@+id/signUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="8dp"
                 android:textColor="#155EEF"
+                android:textStyle="bold"
                 android:text="Daftar Sekarang"/>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

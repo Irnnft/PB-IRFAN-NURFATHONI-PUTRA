@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class home extends AppCompatActivity {
 
     @Override
@@ -31,6 +33,36 @@ public class home extends AppCompatActivity {
         btnProfile.setOnClickListener(view -> {
             Intent intent = new Intent(home.this, Profile.class);
             startActivity(intent);
+        });
+
+        // Tombol menu utama: Keuangan
+        Button btnKeuangan = findViewById(R.id.btnKeuangan);
+        btnKeuangan.setOnClickListener(view -> {
+            Intent intent = new Intent(home.this, Keuangan.class);
+            startActivity(intent);
+        });
+
+        // Tombol menu utama: Memo
+        Button btnMemo = findViewById(R.id.btnMemo);
+        btnMemo.setOnClickListener(view -> {
+            Intent intent = new Intent(home.this, Memo.class);
+            startActivity(intent);
+        });
+
+        // Bottom Navigation handler
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_home) {
+                return true; // Sudah di home
+            } else if (itemId == R.id.nav_graph) {
+                startActivity(new Intent(home.this, Profile.class));
+                return true;
+            } else if (itemId == R.id.nav_settings) {
+                startActivity(new Intent(home.this, Settings.class));
+                return true;
+            }
+            return false;
         });
     }
 }
